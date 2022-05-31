@@ -100,12 +100,22 @@ const Home: NextPage = () => {
           style={{
             marginTop: "10px",
             display: "block",
-            fontWeight: 'bold',
-            color: '#de3f4d'
+            fontWeight: "bold",
+            color: "#de3f4d",
           }}
         >
-          <i>Note: The base color in svg must be black (#000000), Otherwise it will affect the color result of the filter</i>
+          <i>
+            Note: The base color in svg must be black (#000000), Otherwise it
+            will affect the color result of the filter
+          </i>
         </span>
+        {status !== "" && (
+          <>
+            <br />
+            <b style={{ marginBottom: "5px", display: "block" }}>Status:</b>
+            Los {filter.loss.toFixed(1)} <b>{status}</b>
+          </>
+        )}
       </fieldset>
       <div
         style={{
@@ -141,12 +151,6 @@ const Home: NextPage = () => {
         </>
       )}
       <br />
-      {status !== "" && (
-        <>
-          <b style={{marginBottom: '5px', display: 'block'}}>Status:</b>
-          Los {filter.loss.toFixed(1)} <b>{status}</b>
-        </>
-      )}
     </div>
   );
 };
