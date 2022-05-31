@@ -1,5 +1,6 @@
 import React from "react";
 import type { NextPage } from "next";
+import Head from "next/head";
 
 import IHome from "../components/icons/IHome";
 
@@ -70,6 +71,10 @@ const Home: NextPage = () => {
 
   return (
     <div className="container">
+      <Head>
+        <title>Filter Generator</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <fieldset>
         <p>
           <label>Target color </label>
