@@ -21,7 +21,6 @@ const Home: NextPage = () => {
     const colorRGB = new Color(rgb[0], rgb[1], rgb[2]);
     const solver = new Solver(colorRGB);
     const result = solver.solve();
-    const { filter: resultFilter } = result;
 
     let lossMsg: string;
     if (result.loss < 1) {
@@ -39,7 +38,7 @@ const Home: NextPage = () => {
     }
 
     setColorBg(color);
-    setFilter(resultFilter);
+    setFilter(result);
   };
 
   const ExampleUsage =
@@ -122,14 +121,14 @@ const Home: NextPage = () => {
           <b style={{ marginBottom: "5px", display: "block" }}>
             Filter result:
           </b>
-          <code>filter={'"' + filter + '"'}</code>
+          <code>filter={'"' + filter.filter + '"'}</code>
           <br />
           <br />
         </>
       )}
       <b>Example result filter in SVG:</b>
       <br />
-      <IHome color={filter} />
+      <IHome color={filter.filter} />
       <br />
       <br />
       {status !== "" && (
@@ -144,8 +143,8 @@ const Home: NextPage = () => {
       <br />
       {status !== "" && (
         <>
-          <b>Status:</b> <br />
-          {status}
+          <b style={{marginBottom: '5px', display: 'block'}}>Status:</b>
+          Los {filter.loss.toFixed(1)} <b>{status}</b>
         </>
       )}
     </div>
