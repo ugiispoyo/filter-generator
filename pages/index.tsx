@@ -49,7 +49,7 @@ const Home: NextPage = () => {
     ' viewBox="0 0 25 24"' +
     ' fill="none"' +
     ' filter="' +
-    filter +
+    filter.filter +
     '"' +
     ' xmlns="http://www.w3.org/2000/svg"' +
     ">" +
