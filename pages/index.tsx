@@ -107,7 +107,15 @@ const Home: NextPage = () => {
           marginBottom: "20px",
         }}
       ></div>
-      <b>Result Filter in SVG:</b>
+      {filter !== "" && (
+        <>
+          <b style={{marginBottom: '5px', display: 'block'}}>Filter result:</b>
+          <code>filter={'"'+filter+'"'}</code>
+          <br/>
+          <br/>
+        </>
+      )}
+      <b>Example result filter in SVG:</b>
       <br />
       <IHome color={filter} />
       <br />
