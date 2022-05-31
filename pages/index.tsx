@@ -38,7 +38,7 @@ const Home: NextPage = () => {
       setStatus("The color is extremely off. Run it again!");
     }
 
-    setColorBg(color);
+    setColorBg(colorRGB.toString());
     setFilter(result);
   };
 
@@ -90,7 +90,7 @@ const Home: NextPage = () => {
         </p>
         <span
           style={{
-            background: `${color}`,
+            background: `${color.toString()}`,
             width: "60px",
             height: "20px",
             marginTop: "20px",
@@ -124,7 +124,8 @@ const Home: NextPage = () => {
       </fieldset>
       <div
         style={{
-          background: `${colorBg || "#000"}`,
+          background: '#000',
+          filter: `${filter?.filter}`,
           width: "60px",
           height: "60px",
           marginTop: "20px",
