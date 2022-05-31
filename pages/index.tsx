@@ -42,6 +42,33 @@ const Home: NextPage = () => {
     setFilter(resultFilter);
   };
 
+  const ExampleUsage =
+    "<svg" +
+    ' width="25"' +
+    ' height="24"' +
+    ' viewBox="0 0 25 24"' +
+    ' fill="none"' +
+    ' filter="' +
+    filter +
+    '"' +
+    ' xmlns="http://www.w3.org/2000/svg"' +
+    ">" +
+    " <path" +
+    ' d="M3.35449 9L12.3545 2L21.3545 9V20C21.3545 20.5304 21.1438 21.0391 20.7687 21.4142C20.3936 21.7893 19.8849 22 19.3545 22H5.35449C4.82406 22 4.31535 21.7893 3.94028 21.4142C3.56521 21.0391 3.35449 20.5304 3.35449 20V9Z"' +
+    ' stroke="#111827"' +
+    ' strokeWidth="2"' +
+    ' strokeLinecap="round"' +
+    ' strokeLinejoin="round"' +
+    " />" +
+    " <path" +
+    ' d="M9.35449 22V12H15.3545V22"' +
+    ' stroke="#111827"' +
+    ' strokeWidth="2"' +
+    ' strokeLinecap="round"' +
+    ' strokeLinejoin="round"' +
+    "/>" +
+    "</svg>";
+
   return (
     <div className="container">
       <fieldset>
@@ -64,7 +91,7 @@ const Home: NextPage = () => {
             height: "20px",
             marginTop: "20px",
             marginBottom: "20px",
-            display: 'block'
+            display: "block",
           }}
         ></span>
         <button onClick={() => generateFilter()} className="submit">
@@ -80,14 +107,27 @@ const Home: NextPage = () => {
           marginBottom: "20px",
         }}
       ></div>
-      Result Filter in SVG:
+      <b>Result Filter in SVG:</b>
       <br />
       <IHome color={filter} />
       <br />
       <br />
-      {status !== "" &&
-        `
-        Status: ${status}`}
+      {status !== "" && (
+        <>
+          <b>Example usage:</b> <br />
+          <code style={{ marginTop: "5px", display: "block" }}>
+            {" "}
+            {ExampleUsage}
+          </code>
+        </>
+      )}
+      <br />
+      {status !== "" && (
+        <>
+          <b>Status:</b> <br />
+          {status}
+        </>
+      )}
     </div>
   );
 };
